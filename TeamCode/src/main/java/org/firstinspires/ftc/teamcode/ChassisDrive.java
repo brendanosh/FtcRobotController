@@ -65,7 +65,6 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  */
 
 @TeleOp(name="ChassisDrive", group="Linear OpMode")
-@Disabled
 public class ChassisDrive extends LinearOpMode {
 
     // Declare OpMode members
@@ -122,7 +121,7 @@ public class ChassisDrive extends LinearOpMode {
 
         double shooterSpeed = 0.7f;
         double shooterPower = 0f;
-        double intakeSpeed = 0.5f;
+        double intakeSpeed = -0.5f;
         double intakePower = 0f;
         double ferrisSpeed = 0.5f;
         double ferrisPower = 0f;
@@ -177,7 +176,7 @@ public class ChassisDrive extends LinearOpMode {
             if(gamepad1.right_trigger_pressed){
                 ferrisPower = ferrisSpeed * gamepad1.right_trigger;
             }else if(gamepad1.left_trigger_pressed){
-                ferrisPower = ferrisSpeed * gamepad1.left_trigger;
+                ferrisPower = -ferrisSpeed * gamepad1.left_trigger;
             }else{
                 ferrisPower = 0f;
             }
